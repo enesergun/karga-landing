@@ -70,6 +70,57 @@ export default function Home() {
             Google Play
           </a>
         </div>
+
+        {/* Social Media & Contact */}
+        <div className="mt-6 lg:mt-10 flex flex-wrap gap-3 items-center z-10 w-full animate-fade-in">
+          {/* Instagram */}
+          <a
+            id="social-instagram-link"
+            href="https://www.instagram.com/kargaapp/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Karga Instagram Hesabı"
+            title="Instagram @kargaapp"
+            className="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300 group"
+          >
+            <svg className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          
+          {/* LinkedIn */}
+          <a
+            id="social-linkedin-link"
+            href="https://www.linkedin.com/in/enesergun/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Enes Ergün LinkedIn Profili"
+            title="LinkedIn Enes Ergün"
+            className="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300 group"
+          >
+            <svg className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+
+          {/* Email */}
+          <a
+            id="social-email-link"
+            href="mailto:enesergun1515@gmail.com"
+            aria-label="E-posta Gönder"
+            title="E-posta: enesergun1515@gmail.com"
+            className="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300 group"
+          >
+            <svg className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
       </div>
 
       {/* Images Content */}

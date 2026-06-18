@@ -21,16 +21,16 @@ export const metadata: Metadata = {
     apple: "/favicon.png",
   },
   alternates: {
-    canonical: "https://karga.app",
+    canonical: "https://kargasoru.netlify.app",
   },
   openGraph: {
     title: "Karga | Dijital Soru ve Yanlış Defteri",
     description: "Çözemediğin ve takıldığın soruları fotoğrafla, kütüphanene ekle ve çalışma programına göre tekrar hatırla. Karga ile sınav hazırlığında başarıyı yakala!",
-    url: "https://karga.app",
+    url: "https://kargasoru.netlify.app",
     siteName: "Karga",
     images: [
       {
-        url: "https://karga.app/karga.png",
+        url: "https://kargasoru.netlify.app/karga.png",
         width: 512,
         height: 512,
         alt: "Karga Logo - Dijital Soru ve Yanlış Defteri",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Karga | Dijital Soru ve Yanlış Defteri",
     description: "Çözemediğin ve takıldığın soruları fotoğrafla, kütüphanene ekle ve çalışma programına göre tekrar hatırla. Karga ile sınav hazırlığında başarıyı yakala!",
-    images: ["https://karga.app/karga.png"],
+    images: ["https://kargasoru.netlify.app/karga.png"],
   },
 };
 
@@ -65,9 +65,9 @@ const jsonLd = {
     "ratingCount": "154",
   },
   "screenshot": [
-    "https://karga.app/library.webp",
-    "https://karga.app/add.webp",
-    "https://karga.app/reminder.webp",
+    "https://kargasoru.netlify.app/library.webp",
+    "https://kargasoru.netlify.app/add.webp",
+    "https://kargasoru.netlify.app/reminder.webp",
   ],
   "downloadUrl": "https://apps.apple.com/tr/app/karga-sorular%C4%B1-asla-unutma/id6770515165",
   "sameAs": [

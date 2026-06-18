@@ -30,11 +30,4 @@ body {
   overflow-y: auto;
 }
 
-@media (min-width: 1024px) {
-  body {
-    overflow: hidden;
-    height: 100vh;
-    width: 100vw;
-  }
-}
 

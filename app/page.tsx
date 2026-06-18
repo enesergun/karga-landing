@@ -58,7 +58,8 @@ export default function Home() {
           </a>
           <a
             id="download-googleplay-link"
-            href="#"
+            target="_blank"
+            href="https://play.google.com/store/apps/details?id=com.ergunenes.sorucek&pcampaignid=web_share"
             aria-label="Google Play Store'dan Karga uygulamasını indirin"
             className="flex items-center justify-center gap-2 bg-surface text-text-main border-2 border-border px-6 py-3 lg:px-8 lg:py-4 rounded-full font-bold text-sm lg:text-lg hover:border-primary hover:text-primary transition-all duration-300 shadow-sm"
           >
@@ -186,7 +187,8 @@ export default function Home() {
           </a>
           <a
             id="download-googleplay-link-mobile"
-            href="#"
+            target="_blank"
+            href="https://play.google.com/store/apps/details?id=com.ergunenes.sorucek&pcampaignid=web_share"
             aria-label="Google Play Store'dan Karga uygulamasını indirin"
             className="flex items-center justify-center gap-2 bg-surface text-text-main border-2 border-border w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base active:scale-95 transition-all duration-300 shadow-sm"
           >

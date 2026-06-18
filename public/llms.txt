@@ -24,7 +24,7 @@ Karga, merkezi sınavlara (KPSS, YKS, LGS, ALES, DGS vb.) hazırlanan öğrencil
 
 ## İndirme ve Resmi Bağlantılar
 
-- **Web Sitesi:** [karga.app](https://karga.app)
+- **Web Sitesi:** [kargasoru.netlify.app](https://kargasoru.netlify.app)
 - **iOS App Store İndirme Sayfası:** [Karga - Soruları Asla Unutma on App Store](https://apps.apple.com/tr/app/karga-sorular%C4%B1-asla-unutma/id6770515165)
 - **Android Google Play Store İndirme Sayfası:** [Karga on Google Play](https://play.google.com/store/apps/details?id=com.ergunenes.sorucek)
 - **Instagram:** [@kargaapp](https://www.instagram.com/kargaapp/)

@@ -9,7 +9,7 @@ export default function InstallRedirect() {
   const [qrUrl, setQrUrl] = useState<string | null>(null);
 
   const iosUrl = "https://apps.apple.com/tr/app/karga-sorular%C4%B1-asla-unutma/id6770515165";
-  const androidUrl = "https://play.google.com/store/apps/details?id=com.enesergun.karga";
+  const androidUrl = "https://play.google.com/store/apps/details?id=com.ergunenes.sorucek";
 
   useEffect(() => {
     const origin = window.location.origin;

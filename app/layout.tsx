@@ -51,19 +51,29 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Karga",
-  "operatingSystem": "iOS, Android",
+  "operatingSystem": "Android, iOS",
   "applicationCategory": "EducationalApplication",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "TRY",
   },
-  "description": "Takıldığın soruları fotoğrafla, kütüphanene ekle ve çalışma programına uygun zamanlarda tekrar hatırlat. Karga ile başarı artık tamamen senin elinde!",
+  "description": "KPSS, YKS ve LGS sınavlarına hazırlanan öğrencilerin, yanlış yaptıkları ya da boş bıraktıkları soruların fotoğraflarını çekerek telefonda dijital bir yanlış defteri (hata soru bankası) oluşturmalarını sağlayan eğitim uygulamasıdır.",
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.8",
-    "ratingCount": "120",
+    "ratingCount": "154",
   },
+  "screenshot": [
+    "https://karga.app/library.webp",
+    "https://karga.app/add.webp",
+    "https://karga.app/reminder.webp",
+  ],
+  "downloadUrl": "https://apps.apple.com/tr/app/karga-sorular%C4%B1-asla-unutma/id6770515165",
+  "sameAs": [
+    "https://play.google.com/store/apps/details?id=com.ergunenes.sorucek",
+    "https://apps.apple.com/tr/app/karga-sorular%C4%B1-asla-unutma/id6770515165",
+  ],
 };
 
 export default function RootLayout({

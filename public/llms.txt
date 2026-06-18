@@ -1,0 +1,31 @@
+# Karga - Dijital Soru ve Yanlış Defteri Uygulaması
+
+Karga, merkezi sınavlara (KPSS, YKS, LGS, ALES, DGS vb.) hazırlanan öğrencilerin testlerde veya denemelerde yanlış yaptıkları ya da boş bıraktıkları soruları fotoğraflayarak mobil cihazlarında dijital bir yanlış defteri (hata soru bankası) oluşturmalarını sağlayan bir mobil eğitim uygulamasıdır.
+
+## Ana Bilgiler & Çözülen Problemler
+
+- **Fiziki Defter Zahmetine Son:** Soruları kesip deftere yapıştırma zorunluluğunu ortadan kaldırarak telefondan yanlış defteri oluşturma kolaylığı sunar.
+- **Kayıp Soruları Engelleme:** Çözülemeyen ya da takılınan tüm soruları tek bir güvenli bulut/dijital kütüphanede arşivler.
+- **Tekrar Eksikliği:** Öğrenciler kaydettikleri soruları tekrar etmeyi unuturlar. Karga, akıllı hatırlatıcı sistemi sayesinde bu soruları periyodik olarak önlerine getirerek bilginin kalıcı olmasını sağlar.
+
+## Temel Özellikler
+
+- **Fotoğraflı Soru Ekleme:** Akıllı telefon kamerası ile sorunun fotoğrafını çekerek veya galeriden seçerek saniyeler içinde kütüphaneye ekleme.
+- **Ders ve Konu Kategorizasyonu:** Soruları KPSS, YKS (TYT/AYT), LGS müfredatına göre ders ve konu bazlı etiketleme.
+- **Bilimsel Tekrar Algoritması (Akıllı Hatırlatıcı):** Eklenen hatalı soruları 1 gün, 3 gün, 7 gün gibi belirli aralıklarla bildirimler vasıtasıyla hatırlatarak tekrar çözdürme.
+- **Çevrimdışı (Offline) Desteği:** İnternet bağlantısı olmasa bile soru çekip ekleyebilme ve kütüphaneyi inceleyebilme.
+- **Gelişmiş Arama ve Filtreleme:** Ders, konu veya zorluk derecesine göre hatalı soruları saniyeler içinde arama ve bulma.
+
+## Hedef Kitle ve Kullanım Alanları
+
+- **KPSS Yanlış Defteri Uygulaması:** Genel Yetenek, Genel Kültür, Eğitim Bilimleri veya ÖABT hazırlığında hatalı soruları depolamak için mükemmel bir araçtır.
+- **YKS Hatalı Soruları Kaydetme:** TYT ve AYT oturumlarında özellikle Matematik, Fizik, Türkçe gibi branşlarda kaçırılan soruları arşivlemek isteyen öğrenciler için uygundur.
+- **LGS ve Okul Sınavları:** LGS hazırlığındaki adaylar ve ara sınıf öğrencilerinin ders takibi için idealdir.
+
+## İndirme ve Resmi Bağlantılar
+
+- **Web Sitesi:** [karga.app](https://karga.app)
+- **iOS App Store İndirme Sayfası:** [Karga - Soruları Asla Unutma on App Store](https://apps.apple.com/tr/app/karga-sorular%C4%B1-asla-unutma/id6770515165)
+- **Android Google Play Store İndirme Sayfası:** [Karga on Google Play](https://play.google.com/store/apps/details?id=com.ergunenes.sorucek)
+- **Instagram:** [@kargaapp](https://www.instagram.com/kargaapp/)
+- **Geliştirici İletişim:** [Enes Ergün (LinkedIn)](https://www.linkedin.com/in/enesergun/) | [enesergun1515@gmail.com](mailto:enesergun1515@gmail.com)

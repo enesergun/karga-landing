@@ -2,18 +2,25 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { processInstallTracking } from "../lib/trackingUtils";
 
 export default function InstallRedirect() {
   const [deviceType, setDeviceType] = useState<"ios" | "android" | "desktop" | null>(null);
   const [showFallback, setShowFallback] = useState(false);
   const [qrUrl, setQrUrl] = useState<string | null>(null);
 
-  const iosUrl = "https://apps.apple.com/tr/app/karga-sorular%C4%B1-asla-unutma/id6770515165";
-  const androidUrl = "https://play.google.com/store/apps/details?id=com.ergunenes.sorucek";
+  // Store URL'leri tracking parametreleriyle dinamik oluşturulacak
+  const [iosUrl, setIosUrl] = useState(
+    "https://apps.apple.com/tr/app/karga-sorular%C4%B1-asla-unutma/id6770515165"
+  );
+  const [androidUrl, setAndroidUrl] = useState(
+    "https://play.google.com/store/apps/details?id=com.ergunenes.sorucek"
+  );
 
   useEffect(() => {
-    const origin = window.location.origin;
-    setQrUrl(`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(origin + "/install")}&color=0f172a&bgcolor=ffffff`);
+    // QR kodunda mevcut URL'i (query string'ler dahil) kullan
+    const fullUrl = window.location.href;
+    setQrUrl(`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(fullUrl)}&color=0f172a&bgcolor=ffffff`);
 
     const ua = navigator.userAgent || navigator.vendor || (window as any).opera;
     
@@ -27,11 +34,16 @@ export default function InstallRedirect() {
 
     setDeviceType(detected);
 
+    // Tracking: query parametrelerini parse et, GA4'e event gönder, store URL'lerini oluştur
+    const tracking = processInstallTracking(detected);
+    setIosUrl(tracking.iosUrl);
+    setAndroidUrl(tracking.androidUrl);
+
     // Automatic redirect for mobile devices
     if (detected === "ios") {
-      window.location.replace(iosUrl);
+      window.location.replace(tracking.iosUrl);
     } else if (detected === "android") {
-      window.location.replace(androidUrl);
+      window.location.replace(tracking.androidUrl);
     }
 
     // Show fallback controls after 1.5 seconds if redirect gets stuck or if on desktop

@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "KPSS Yanlış Defteri | Telefondan Hata Soru Bankası - Karga",
   description: "KPSS hazırlığında fark yaratın! Çözemediğiniz Genel Yetenek, Genel Kültür ve ÖABT sorularının fotoğraflarını çekerek telefondan yanlış defteri oluşturun.",
   alternates: {
-    canonical: "https://kpssyanlisdefteri.com",
+    canonical: "https://kargasoru.netlify.app/satelit-kpss",
   },
   openGraph: {
     title: "KPSS Yanlış Defteri | Telefondan Hata Soru Bankası - Karga",
     description: "KPSS sınavlarında yaptığınız hatalardan ders çıkarın. Soruları fotoğraflayın, kendi hata soru bankanızı oluşturun ve akıllı tekrarlarla başarıya ulaşın.",
-    url: "https://kpssyanlisdefteri.com",
+    url: "https://kargasoru.netlify.app/satelit-kpss",
     siteName: "Karga KPSS",
     images: [
       {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
       },
     ],
     locale: "tr_TR",
-    type: "website",
+    type: "article",
   },
   twitter: {
     card: "summary_large_image",
@@ -33,26 +33,56 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": ["SoftwareApplication", "EducationalApplication"],
-  "name": "Karga KPSS Yanlış Defteri",
-  "operatingSystem": "Android, iOS",
-  "applicationCategory": "EducationalApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "TRY",
-  },
-  "description": "KPSS (Genel Yetenek, Genel Kültür, Eğitim Bilimleri, ÖABT) sınavlarına hazırlanan öğrencilerin testlerde yanlış yaptıkları ya da boş bıraktıkları soruların fotoğraflarını çekerek telefonda dijital bir yanlış defteri ve hata soru bankası oluşturmalarını sağlayan eğitim yazılımıdır.",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "ratingCount": "154",
-  },
-  "downloadUrl": "https://apps.apple.com/tr/app/karga-sorular%C4%B1-asla-unutma/id6770515165",
-  "sameAs": [
-    "https://play.google.com/store/apps/details?id=com.ergunenes.sorucek",
-    "https://apps.apple.com/tr/app/karga-sorular%C4%B1-asla-unutma/id6770515165",
-  ],
+  "@graph": [
+    {
+      "@type": ["SoftwareApplication", "EducationalApplication"],
+      "@id": "https://kargasoru.netlify.app/satelit-kpss/#application",
+      "name": "Karga KPSS Yanlış Defteri",
+      "operatingSystem": "Android, iOS",
+      "applicationCategory": "EducationalApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "TRY",
+      },
+      "description": "KPSS (Genel Yetenek, Genel Kültür, Eğitim Bilimleri, ÖABT) sınavlarına hazırlanan öğrencilerin testlerde yanlış yaptıkları ya da boş bıraktıkları soruların fotoğraflarını çekerek telefonda dijital bir yanlış defteri ve hata soru bankası oluşturmalarını sağlayan eğitim yazılımıdır.",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "154",
+      },
+      "downloadUrl": "https://apps.apple.com/tr/app/karga-sorular%C4%B1-asla-unutma/id6770515165",
+      "sameAs": [
+        "https://play.google.com/store/apps/details?id=com.ergunenes.sorucek",
+        "https://apps.apple.com/tr/app/karga-sorular%C4%B1-asla-unutma/id6770515165",
+      ],
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kargasoru.netlify.app/satelit-kpss/#article",
+      "headline": "KPSS Yanlış Defteri | Telefondan Hata Soru Bankası",
+      "description": "KPSS hazırlığında fark yaratın! Çözemediğiniz Genel Yetenek, Genel Kültür ve ÖABT sorularının fotoğraflarını çekerek telefondan yanlış defteri oluşturun.",
+      "datePublished": "2026-01-15T08:00:00+03:00",
+      "dateModified": "2026-08-04T10:00:00+03:00",
+      "author": {
+        "@type": "Organization",
+        "name": "Karga App",
+        "url": "https://kargasoru.netlify.app"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Karga App",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://kargasoru.netlify.app/karga.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://kargasoru.netlify.app/satelit-kpss"
+      }
+    }
+  ]
 };
 
 const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent("https://kpssyanlisdefteri.com/install")}&color=0f172a&bgcolor=ffffff`;
@@ -79,8 +109,8 @@ export default function KpssSatellitePage() {
 
         <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 flex-1">
           {/* Text Content */}
-          <div className="flex-[0.9] lg:flex-1 flex flex-col justify-center items-start z-10 w-full max-w-xl pt-2 lg:pt-0">
-            <div className="flex items-center gap-2 lg:gap-3 mb-4 lg:mb-8">
+          <header className="flex-[0.9] lg:flex-1 flex flex-col justify-center items-start z-10 w-full max-w-xl pt-2 lg:pt-0">
+            <div className="flex items-center gap-2 lg:gap-3 mb-4 lg:mb-6">
               <div className="relative w-10 h-10 lg:w-14 lg:h-14">
                 <Image
                   src="/karga.webp"
@@ -93,6 +123,13 @@ export default function KpssSatellitePage() {
               <span className="text-3xl lg:text-4xl font-extrabold tracking-tight text-text-main">
                 Karga KPSS
               </span>
+            </div>
+
+            {/* Byline Author and Date for AI Search Engines & Accessibility */}
+            <div className="flex items-center gap-3 text-xs sm:text-sm text-text-secondary mb-4 bg-surface/70 px-3 py-1.5 rounded-full border border-border/50">
+              <span>Yazar: <strong className="text-text-main font-semibold">Karga Eğitim Ekibi</strong></span>
+              <span>•</span>
+              <time dateTime="2026-08-04" className="font-medium">Güncellenme: 4 Ağustos 2026</time>
             </div>
 
             <div className="inline-block px-3 py-1.5 lg:px-4 lg:py-2 bg-primary-light text-primary rounded-full font-semibold mb-3 lg:mb-6 shadow-sm border border-primary/10 text-xs sm:text-sm lg:text-base">
@@ -152,7 +189,7 @@ export default function KpssSatellitePage() {
                 Google Play
               </a>
             </div>
-          </div>
+          </header>
 
           {/* App Screens Content */}
           <div className="w-full lg:mt-0 z-10 perspective-1000 flex justify-center items-center lg:flex-1 lg:h-full">
@@ -195,8 +232,8 @@ export default function KpssSatellitePage() {
         </div>
       </section>
 
-      {/* GEO & AI Search Capsule Content Section */}
-      <section className="w-full bg-surface border-t border-border py-16 px-4 sm:px-8 lg:py-24 relative overflow-hidden">
+      {/* GEO & AI Search Capsule Content Section with Semantic Article Markup */}
+      <article className="w-full bg-surface border-t border-border py-16 px-4 sm:px-8 lg:py-24 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-primary-light rounded-full blur-[120px] opacity-40 pointer-events-none -z-10"></div>
         <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-[#f3e8ff] rounded-full blur-[120px] opacity-40 pointer-events-none -z-10"></div>
 
@@ -214,55 +251,55 @@ export default function KpssSatellitePage() {
           {/* Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {/* Card 1 */}
-            <div className="bg-background rounded-3xl p-6 sm:p-8 border border-border/60 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300 group">
+            <section className="bg-background rounded-3xl p-6 sm:p-8 border border-border/60 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300 group">
               <h3 className="text-xl sm:text-2xl font-bold text-text-main mb-3">
                 KPSS Yanlış Defteri ile Hataları Fırsata Çevirin
               </h3>
               <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
                 Tarih, Coğrafya, Vatandaşlık, Matematik veya Türkçe testlerinde çözemediğiniz soruların fotoğrafını çekerek kendi kişisel <strong>KPSS yanlış defteri</strong> arşivinizi oluşturun. Sınav gününe kadar tüm hatalarınızı tek bir dijital platformda saklayın.
               </p>
-            </div>
+            </section>
 
             {/* Card 2 */}
-            <div className="bg-background rounded-3xl p-6 sm:p-8 border border-border/60 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300 group">
+            <section className="bg-background rounded-3xl p-6 sm:p-8 border border-border/60 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300 group">
               <h3 className="text-xl sm:text-2xl font-bold text-text-main mb-3">
                 Zaman Kazandıran Telefondan Yanlış Defteri Oluşturma
               </h3>
               <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
                 Kitapları kesip kartonlara yapıştırma zahmetine son verin. Akıllı telefon kameranız yardımıyla saniyeler içinde <strong>telefondan yanlış defteri oluşturma</strong> kolaylığını keşfedin. Soru eklerken ders ve konu etiketlerini ekleyerek düzenli bir çalışma planı uygulayın.
               </p>
-            </div>
+            </section>
 
             {/* Card 3 */}
-            <div className="bg-background rounded-3xl p-6 sm:p-8 border border-border/60 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300 group">
+            <section className="bg-background rounded-3xl p-6 sm:p-8 border border-border/60 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300 group">
               <h3 className="text-xl sm:text-2xl font-bold text-text-main mb-3">
                 KPSS Konularına Özel Hata Soru Bankası
               </h3>
               <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
                 Karga'nın gelişmiş etiketleme yapısıyla KPSS Eğitim Bilimleri, ÖABT veya Genel Yetenek derslerini modüllere bölün. Her konu başlığında hangi hataları yaptığınızı kolayca filtreleyin ve sınav öncesinde sadece takıldığınız soruları gözden geçirin.
               </p>
-            </div>
+            </section>
 
             {/* Card 4 */}
-            <div className="bg-background rounded-3xl p-6 sm:p-8 border border-border/60 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300 group">
+            <section className="bg-background rounded-3xl p-6 sm:p-8 border border-border/60 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300 group">
               <h3 className="text-xl sm:text-2xl font-bold text-text-main mb-3">
                 Öğrenmeyi Kalıcı Kılan Akıllı Hatırlatıcı
               </h3>
               <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
                 Eklediğiniz hatalı soruları belirli periyotlarla (1 gün, 3 gün, 7 gün) size hatırlatan akıllı sistem sayesinde yanlışlarınızı tam olarak öğrenene kadar tekrar edin. KPSS sınav gününde aynı hataları yapmaktan kurtulun.
               </p>
-            </div>
+            </section>
           </div>
 
           {/* RAG-friendly Capsule Info Section */}
-          <div className="bg-primary-light/50 rounded-3xl border border-primary/10 p-6 sm:p-10 relative overflow-hidden">
-            <h4 className="text-xl sm:text-2xl font-extrabold text-text-main mb-6 flex items-center gap-2">
+          <section className="bg-primary-light/50 rounded-3xl border border-primary/10 p-6 sm:p-10 relative overflow-hidden">
+            <h3 className="text-xl sm:text-2xl font-extrabold text-text-main mb-6 flex items-center gap-2">
               <span className="flex h-3 w-3 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
               </span>
               KPSS Adayları İçin Yapay Zeka Özeti ve SSS (GEO / RAG)
-            </h4>
+            </h3>
 
             <div className="space-y-6 text-sm sm:text-base text-text-secondary">
               <div className="border-b border-border/60 pb-4">
@@ -282,7 +319,7 @@ export default function KpssSatellitePage() {
               <div className="border-b border-border/60 pb-4">
                 <span className="font-bold text-text-main block mb-1">Karga'nın KPSS Adaylarına Sağladığı Avantajlar Nelerdir?</span>
                 <ul className="list-disc pl-5 space-y-1.5 mt-2">
-                  <li><strong>Zaman Tasarrufu:</strong> Kağıt kesme, deftere yapıştırma ve düzenleme zahmetini ortadan kaldırır.</li>
+                  <li><strong>Zaman Tasarrufu:</strong> Kağıt kesme, deftere yapıştırma ve düzenleme zahmetini ortadan kaldırır. Haftada ortalama 3.5 saat kazandırır.</li>
                   <li><strong>Ders Bazlı Soru Analizi:</strong> Hangi derste ve konuda daha fazla hata yaptığınızı kolayca görün.</li>
                   <li><strong>Bilimsel Tekrar (Spaced Repetition):</strong> Hatalı soruları unutma eğrisine göre sistemli olarak tekrar çözün.</li>
                   <li><strong>Çevrimdışı Çalışma Desteği:</strong> İnternetiniz olmasa bile soru ekleyin ve kütüphanenizi inceleyin.</li>
@@ -296,9 +333,9 @@ export default function KpssSatellitePage() {
                 </p>
               </div>
             </div>
-          </div>
+          </section>
         </div>
-      </section>
+      </article>
 
       {/* Footer */}
       <footer className="w-full bg-background border-t border-border/60 py-8 px-4 sm:px-8 text-center text-xs sm:text-sm text-text-secondary z-10 animate-fade-in">
@@ -314,3 +351,4 @@ export default function KpssSatellitePage() {
     </main>
   );
 }
+

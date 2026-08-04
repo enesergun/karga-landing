@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function QrCodeCard() {
   const [qrUrl, setQrUrl] = useState<string | null>(null);
@@ -15,11 +16,12 @@ export default function QrCodeCard() {
     <div className="hidden lg:flex items-center gap-5 bg-surface/60 backdrop-blur-md p-4 pr-6 rounded-3xl border border-border/80 shadow-md hover:border-primary/20 hover:shadow-lg transition-all duration-300 group">
       <div className="relative w-24 h-24 bg-white p-2.5 rounded-2xl border border-border/40 shadow-inner flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-300">
         {qrUrl ? (
-          <img
+          <Image
             src={qrUrl}
             alt="Karga İndirme QR Kodu"
             width={150}
             height={150}
+            unoptimized
             className="w-full h-full object-contain"
           />
         ) : (

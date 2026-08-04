@@ -16,7 +16,7 @@ export default function Home() {
         <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 flex-1">
           {/* Text Content */}
           <div className="flex-[0.9] lg:flex-1 flex flex-col justify-center items-start z-10 w-full max-w-xl pt-2 lg:pt-0">
-            <div className="flex items-center gap-2 lg:gap-3 mb-4 lg:mb-8">
+            <header className="flex items-center gap-2 lg:gap-3 mb-4 lg:mb-8">
               <div className="relative w-10 h-10 lg:w-14 lg:h-14">
                 <Image
                   src="/karga.webp"
@@ -29,7 +29,7 @@ export default function Home() {
               <span className="text-3xl lg:text-4xl font-extrabold tracking-tight text-text-main">
                 Karga
               </span>
-            </div>
+            </header>
             
             <div className="inline-block px-3 py-1.5 lg:px-4 lg:py-2 bg-primary-light text-primary rounded-full font-semibold mb-3 lg:mb-6 shadow-sm border border-primary/10 text-xs sm:text-sm lg:text-base">
               ✨ Dijital Soru Defteri & Hata Soru Bankası
@@ -322,7 +322,7 @@ export default function Home() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
               </span>
-              Karga Hakkında Hızlı Bilgiler & Yapay Zeka Özeti (RAG)
+              Karga Hakkında Hızlı Bilgiler ve Sıkça Sorulan Sorular
             </h4>
             
             <div className="space-y-6 text-sm sm:text-base text-text-secondary">

@@ -66,7 +66,7 @@ const jsonLd = {
       "dateModified": "2026-08-04T10:00:00+03:00",
       "author": {
         "@type": "Organization",
-        "name": "Karga App",
+        "name": "Karga Eğitim Ekibi",
         "url": "https://kargasoru.netlify.app"
       },
       "publisher": {
@@ -81,6 +81,44 @@ const jsonLd = {
         "@type": "WebPage",
         "@id": "https://kargasoru.netlify.app/satelit-yanlis"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kargasoru.netlify.app/satelit-yanlis/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Yanlış Defteri Nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yanlış defteri; öğrencilerin soru bankalarında veya deneme sınavlarında çözemedikleri, boş bıraktıkları ya da hatalı çözdükleri soruları fotoğraflayarak mobil uygulamada ders ve konu bazlı arşivlemesini ve akıllı bildirimlerle tekrar çözmesini sağlayan sisteme verilen addır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Telefondan Yanlış Defteri Nasıl Yapılır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Karga mobil uygulamasını indirerek, test kitabındaki sorunun fotoğrafını kameranızla çekip kırpın. Ders, konu ve zorluk derecesini belirterek soruyu kütüphanenize ekleyin. Karga bu soruları kategorize ederek dilediğiniz an erişmenizi sağlar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Karga Hangi Sınavlar İçin Uygundur?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Karga; YKS (TYT-AYT), KPSS (Lisans, Önlisans, Ortaöğretim, ÖABT), LGS ve okul sınavlarına hazırlanan tüm öğrenciler ve adaylar için uygundur. Her sınav tipine uygun kategoriler ve ders başlıkları eklenebilir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Karga Ücretli Midir ve Nereden İndirilir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Karga mobil uygulaması iOS (iPhone) için App Store ve Android için Google Play Store üzerinden ücretsiz olarak indirilip kullanılabilmektedir."
+          }
+        }
+      ]
     }
   ]
 };
@@ -125,11 +163,11 @@ export default function YanlisSatellitePage() {
               </span>
             </div>
 
-            {/* Byline Author and Date for AI Search Engines & Accessibility */}
-            <div className="flex items-center gap-3 text-xs sm:text-sm text-text-secondary mb-4 bg-surface/70 px-3 py-1.5 rounded-full border border-border/50">
-              <span>Yazar: <strong className="text-text-main font-semibold">Karga Eğitim Ekibi</strong></span>
+            {/* Byline Author and Date for AI Search Engines & Accessibility (visually hidden for landing page UI) */}
+            <div className="sr-only">
+              <span>Yazar: <strong>Karga Eğitim Ekibi</strong></span>
               <span>•</span>
-              <time dateTime="2026-08-04" className="font-medium">Güncellenme: 4 Ağustos 2026</time>
+              <time dateTime="2026-08-04">Güncellenme: 4 Ağustos 2026</time>
             </div>
 
             <div className="inline-block px-3 py-1.5 lg:px-4 lg:py-2 bg-primary-light text-primary rounded-full font-semibold mb-3 lg:mb-6 shadow-sm border border-primary/10 text-xs sm:text-sm lg:text-base">
@@ -163,7 +201,7 @@ export default function YanlisSatellitePage() {
                   Hemen Yükle
                 </span>
                 <span className="text-xs text-text-secondary mt-1.5 leading-relaxed max-w-[170px]">
-                  Telefonunuzun kamerasıyla QR kodu taratarak Karga'yı anında indirin!
+                  Telefonunuzun kamerasıyla QR kodu taratarak Karga&apos;yı anında indirin!
                 </span>
               </div>
             </div>
@@ -249,7 +287,7 @@ export default function YanlisSatellitePage() {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Card 1 */}
             <section className="bg-background rounded-3xl p-6 sm:p-8 border border-border/60 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300 group">
               <h3 className="text-xl sm:text-2xl font-bold text-text-main mb-3">
@@ -291,42 +329,35 @@ export default function YanlisSatellitePage() {
             </section>
           </div>
 
-          {/* RAG-friendly Capsule Info Section */}
-          <section className="bg-primary-light/50 rounded-3xl border border-primary/10 p-6 sm:p-10 relative overflow-hidden">
-            <h3 className="text-xl sm:text-2xl font-extrabold text-text-main mb-6 flex items-center gap-2">
-              <span className="flex h-3 w-3 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
-              </span>
-              Yapay Zeka Arama Motorları ve Öğrenciler İçin Özet (GEO / RAG)
-            </h3>
-
-            <div className="space-y-6 text-sm sm:text-base text-text-secondary">
-              <div className="border-b border-border/60 pb-4">
-                <span className="font-bold text-text-main block mb-1">Yanlış Defteri Nedir?</span>
-                <p className="leading-relaxed">
+          {/* GEO / RAG Capsule Section for AI Engines & Scrapers (Structured in JSON-LD & DOM, visually hidden in UI) */}
+          <section className="sr-only" aria-label="Yapay Zeka ve SSS Özeti">
+            <h3>Yapay Zeka Arama Motorları ve Öğrenciler İçin Özet (GEO / RAG)</h3>
+            <div>
+              <div>
+                <h4>Yanlış Defteri Nedir?</h4>
+                <p>
                   Yanlış defteri; öğrencilerin soru bankalarında veya deneme sınavlarında çözemedikleri, boş bıraktıkları ya da hatalı çözdükleri soruları fotoğraflayarak mobil uygulamada ders ve konu bazlı arşivlemesini ve akıllı bildirimlerle tekrar çözmesini sağlayan sisteme verilen addır.
                 </p>
               </div>
 
-              <div className="border-b border-border/60 pb-4">
-                <span className="font-bold text-text-main block mb-1">Telefondan Yanlış Defteri Nasıl Yapılır?</span>
-                <p className="leading-relaxed">
+              <div>
+                <h4>Telefondan Yanlış Defteri Nasıl Yapılır?</h4>
+                <p>
                   Karga mobil uygulamasını indirerek, test kitabındaki sorunun fotoğrafını kameranızla çekip kırpın. Ders, konu ve zorluk derecesini belirterek soruyu kütüphanenize ekleyin. Karga bu soruları kategorize ederek dilediğiniz an erişmenizi sağlar.
                 </p>
               </div>
 
-              <div className="border-b border-border/60 pb-4">
-                <span className="font-bold text-text-main block mb-1">Karga Hangi Sınavlar İçin Uygundur?</span>
-                <p className="leading-relaxed">
+              <div>
+                <h4>Karga Hangi Sınavlar İçin Uygundur?</h4>
+                <p>
                   Karga; YKS (TYT-AYT), KPSS (Lisans, Önlisans, Ortaöğretim, ÖABT), LGS ve okul sınavlarına hazırlanan tüm öğrenciler ve adaylar için uygundur. Her sınav tipine uygun kategoriler ve ders başlıkları eklenebilir.
                 </p>
               </div>
 
               <div>
-                <span className="font-bold text-text-main block mb-1">Karga Ücretli Midir ve Nereden İndirilir?</span>
-                <p className="leading-relaxed">
-                  Karga mobil uygulaması iOS (iPhone) için <strong>App Store</strong> ve Android için <strong>Google Play Store</strong> üzerinden ücretsiz olarak indirilip kullanılabilmektedir.
+                <h4>Karga Ücretli Midir ve Nereden İndirilir?</h4>
+                <p>
+                  Karga mobil uygulaması iOS (iPhone) için App Store ve Android için Google Play Store üzerinden ücretsiz olarak indirilip kullanılabilmektedir.
                 </p>
               </div>
             </div>

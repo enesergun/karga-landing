@@ -47,6 +47,9 @@ export const metadata: Metadata = {
     description: "Çözemediğin ve takıldığın soruları fotoğrafla, kütüphanene ekle ve çalışma programına göre tekrar hatırla. Karga ile sınav hazırlığında başarıyı yakala!",
     images: ["https://kargasoru.netlify.app/karga.png"],
   },
+  verification: {
+    google: "SVuFSgKGshPMDmBVRMRh-h-CtCv5ybvCE8omlu4ykls",
+  },
 };
 
 const jsonLd = {
@@ -134,6 +137,14 @@ const jsonLd = {
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Karga mobil uygulaması; iOS (iPhone) platformu için App Store ve Android platformu için Google Play Store üzerinden ücretsiz indirilebilir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Karga Uygulamasının Amacı Nedir ve Google Girişi Neden Kullanılır? (Application Purpose & Google Sign-In)",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Karga, öğrencilerin çözemedikleri veya hatalı yaptıkları soruları fotoğraflayarak dijital soru kütüphanelerinde saklamalarını sağlar. Google ile Giriş Yap (Google Sign-In), kullanıcı sorularının bulutta güvenle saklanması ve tüm cihazlar arasında anında senkronize edilmesi için kullanılır."
           }
         }
       ]

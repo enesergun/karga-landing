@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import QrCodeCard from "./components/QrCodeCard";
 
 export default function Home() {
@@ -351,11 +352,26 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div>
+              <div className="border-b border-border/60 pb-4">
                 <span className="font-bold text-text-main block mb-1">Karga Hangi Cihazlarda Kullanılabilir?</span>
                 <p className="leading-relaxed">
                   Karga mobil uygulaması; iOS (iPhone) platformu için <strong>App Store</strong> ve Android platformu için <strong>Google Play Store</strong> üzerinden ücretsiz indirilebilir.
                 </p>
+              </div>
+
+              <div>
+                <span className="font-bold text-text-main block mb-1">
+                  Karga Uygulamasının Amacı Nedir ve Google Girişi Ne İşe Yarar? (Application Purpose & Google Sign-In)
+                </span>
+                <p className="leading-relaxed mb-2">
+                  <strong>Karga (Karga App)</strong>, öğrencilerin sınav hazırlık süreçlerinde çözemedikleri ve takıldıkları soruları fotoğraflayarak dijital soru bankalarında toplamalarını, ders/konu bazlı düzenlemelerini ve bilimsel aralıklı tekrar yöntemiyle pekiştirmelerini sağlayan bir eğitim uygulamasıdır.
+                </p>
+                <div className="bg-surface/80 p-3 sm:p-4 rounded-2xl border border-border/80 text-xs sm:text-sm text-text-secondary">
+                  <p className="font-semibold text-text-main mb-1">Google ile Oturum Açma Amacı (Authentication Purpose):</p>
+                  <p className="leading-relaxed">
+                    Karga, kullanıcıların soru fotoğraflarını, etiketlerini ve çalışma ilerlemelerini bulutta güvenli bir şekilde yedeklemek ve iOS ile Android mobil cihazları arasında anında senkronize etmek amacıyla Google Sign-In (Google OAuth 2.0) altyapısını kullanır. Google kullanıcı verileri yalnızca hesap oluşturma ve güvenli oturum açma amacıyla işlenir; üçüncü taraflara aktarılmaz veya satılmaz.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -365,12 +381,22 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="w-full bg-background border-t border-border/60 py-8 px-4 sm:px-8 text-center text-xs sm:text-sm text-text-secondary z-10">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <p>© {new Date().getFullYear()} Karga App. Tüm Hakları Saklıdır.</p>
-          <div className="flex gap-4">
-            <a href="https://www.instagram.com/kargaapp/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a>
-            <a href="https://www.linkedin.com/in/enesergun/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
+          <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2">
+            <Link href="/privacy" className="hover:text-primary transition-colors font-semibold text-text-main">
+              Gizlilik Politikası (Privacy Policy)
+            </Link>
+            <span className="text-border hidden sm:inline">•</span>
+            <Link href="/terms" className="hover:text-primary transition-colors font-semibold text-text-main">
+              Kullanım Koşulları (Terms of Service)
+            </Link>
+            <span className="text-border hidden sm:inline">•</span>
             <a href="mailto:enesergun1515@gmail.com" className="hover:text-primary transition-colors">İletişim</a>
+            <span className="text-border hidden sm:inline">•</span>
+            <a href="https://www.instagram.com/kargaapp/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a>
+            <span className="text-border hidden sm:inline">•</span>
+            <a href="https://www.linkedin.com/in/enesergun/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
           </div>
         </div>
       </footer>

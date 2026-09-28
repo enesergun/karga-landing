@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "KPSS Yanlış Defteri | Telefondan Hata Soru Bankası - Karga",
@@ -339,12 +340,22 @@ export default function KpssSatellitePage() {
 
       {/* Footer */}
       <footer className="w-full bg-background border-t border-border/60 py-8 px-4 sm:px-8 text-center text-xs sm:text-sm text-text-secondary z-10 animate-fade-in">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <p>© {new Date().getFullYear()} Karga App. Tüm Hakları Saklıdır.</p>
-          <div className="flex gap-4">
-            <a href="https://www.instagram.com/kargaapp/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a>
-            <a href="https://www.linkedin.com/in/enesergun/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
+          <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2">
+            <Link href="/privacy" className="hover:text-primary transition-colors font-semibold text-text-main">
+              Gizlilik Politikası (Privacy Policy)
+            </Link>
+            <span className="text-border hidden sm:inline">•</span>
+            <Link href="/terms" className="hover:text-primary transition-colors font-semibold text-text-main">
+              Kullanım Koşulları (Terms of Service)
+            </Link>
+            <span className="text-border hidden sm:inline">•</span>
             <a href="mailto:enesergun1515@gmail.com" className="hover:text-primary transition-colors">İletişim</a>
+            <span className="text-border hidden sm:inline">•</span>
+            <a href="https://www.instagram.com/kargaapp/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a>
+            <span className="text-border hidden sm:inline">•</span>
+            <a href="https://www.linkedin.com/in/enesergun/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
           </div>
         </div>
       </footer>

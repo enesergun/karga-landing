@@ -48,7 +48,10 @@ export const metadata: Metadata = {
     images: ["https://kargasoru.netlify.app/karga.png"],
   },
   verification: {
-    google: "SVuFSgKGshPMDmBVRMRh-h-CtCv5ybvCE8omlu4ykls",
+    google: [
+      "SVuFSgKGshPMDmBVRMRh-h-CtCv5ybvCE8omlu4ykls",
+      "GqWlLl66ekW8uvmQ3OtrtvGNoNaDBXpLQ-0ShiF3W2k",
+    ],
   },
 };
 

@@ -1,7 +1,26 @@
-/** JS gerektirmeyen kod giriş formu: /k?code=... → /k/{code} yönlendirmesi. */
+"use client";
+
+import type { FormEvent } from "react";
+import { useRouter } from "next/navigation";
+import { normalizeCode } from "../../lib/kargaKodu";
+
+/**
+ * Kod giriş formu. JS varken doğrudan /k/{code} adresine gider; sunucu
+ * yönlendirmesi olmadığı için Netlify'ın eklediği ?code= adreste kalmaz.
+ * JS yoksa /k?code=... → /k/{code} yönlendirmesi yedek olarak çalışır.
+ */
 export default function CodeForm({ defaultValue = "", autoFocus = false }: { defaultValue?: string; autoFocus?: boolean }) {
+  const router = useRouter();
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const raw = String(new FormData(e.currentTarget).get("code") ?? "").trim();
+    const code = normalizeCode(raw);
+    router.push(code ? `/k/${code}` : `/k?code=${encodeURIComponent(raw)}`);
+  }
+
   return (
-    <form action="/k" method="get" className="w-full flex flex-col sm:flex-row gap-3">
+    <form action="/k" method="get" onSubmit={handleSubmit} className="w-full flex flex-col sm:flex-row gap-3">
       <label htmlFor="karga-kodu" className="sr-only">
         Karga Kodu
       </label>

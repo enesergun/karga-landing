@@ -3,7 +3,9 @@ import { redirect } from "next/navigation";
 import KodHeader from "../../components/karga-kodu/KodHeader";
 import CodeForm from "../../components/karga-kodu/CodeForm";
 import PrintButton from "../../components/karga-kodu/PrintButton";
+import ZoomableImage from "../../components/karga-kodu/ZoomableImage";
 import {
+  INSTALL_URL,
   fetchShare,
   formatCode,
   isBot,
@@ -100,7 +102,7 @@ export default async function SharedQuestionsPage({ params }: { params: Promise<
         <footer className="mt-12 text-center text-sm text-text-secondary print:hidden">
           Bu sorular <span className="font-semibold text-text-main">Karga</span> yanlış defteri uygulamasıyla paylaşıldı.{" "}
           <a
-            href="/install?utm_source=karga_kodu&utm_medium=web"
+            href={`${INSTALL_URL}&utm_campaign=footer`}
             className="font-semibold text-primary hover:text-primary/80"
           >
             Sen de dene
@@ -136,16 +138,12 @@ function QuestionCard({ index, question }: { index: number; question: SharedQues
       </div>
 
       {question.imageUrl ? (
-        <a href={question.imageUrl} target="_blank" rel="noopener noreferrer" className="block">
-          {/* Görseller Cloud Function proxy'sinden gelir; next/image optimizasyonu kullanılmaz. */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={question.imageUrl}
-            alt={`${index + 1}. soru`}
-            loading={index < 2 ? "eager" : "lazy"}
-            className="mx-auto w-auto max-w-full h-auto max-h-[80vh] object-contain rounded-2xl border border-border/60 bg-background"
-          />
-        </a>
+        <ZoomableImage
+          src={question.imageUrl}
+          alt={`${index + 1}. soru`}
+          loading={index < 2 ? "eager" : "lazy"}
+          className="mx-auto w-auto max-w-full h-auto max-h-[80vh] object-contain rounded-2xl border border-border/60 bg-background"
+        />
       ) : (
         <p className="text-text-muted text-sm">Bu sorunun görseli yok.</p>
       )}
@@ -164,12 +162,10 @@ function QuestionCard({ index, question }: { index: number; question: SharedQues
           </summary>
           <div className="mt-3 grid gap-3">
             {question.solutionUrls.map((url, i) => (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
+              <ZoomableImage
                 key={url}
                 src={url}
                 alt={`${index + 1}. sorunun çözümü ${i + 1}`}
-                loading="lazy"
                 className="w-full h-auto rounded-2xl border border-border/60"
               />
             ))}

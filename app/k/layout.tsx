@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import InstallCta from "../components/karga-kodu/InstallCta";
 
 // Paylaşılan sorular öğrencilere ait: hiçbir /k sayfası arama motorlarında görünmesin.
 export const metadata: Metadata = {
@@ -9,8 +10,10 @@ export const metadata: Metadata = {
 
 export default function KargaKoduLayout({ children }: { children: React.ReactNode }) {
   return (
-    <main className="w-full min-h-[100dvh] flex flex-col items-center bg-background text-text-main px-4 sm:px-6 pb-16">
+    // pb-40: alttaki indirme kartı son içeriği örtmesin.
+    <main className="w-full min-h-[100dvh] flex flex-col items-center bg-background text-text-main px-4 sm:px-6 pb-40 print:pb-0">
       {children}
+      <InstallCta />
     </main>
   );
 }

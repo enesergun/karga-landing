@@ -1,24 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
+import { INSTALL_URL } from "../../lib/kargaKodu";
 
-/** Karga Kodu sayfalarının üst şeridi. */
+/** Karga Kodu sayfalarının üst şeridi: logo + uygulamayı indir. */
 export default function KodHeader() {
   return (
     <header className="w-full max-w-3xl flex items-center justify-between py-4 print:hidden">
-      <Link href="/k" className="flex items-center gap-2.5 group">
-        <span className="relative w-9 h-9">
-          <Image src="/karga.webp" alt="Karga" fill sizes="36px" className="object-contain" />
-        </span>
-        <span className="text-lg font-extrabold text-text-main group-hover:text-primary transition-colors">
-          Karga Kodu
-        </span>
+      <Link href="/k" aria-label="Karga Kodu" className="relative w-9 h-9">
+        <Image src="/karga.webp" alt="Karga" fill sizes="36px" className="object-contain" />
       </Link>
-      <Link
-        href="/install?utm_source=karga_kodu&utm_medium=web"
+      <a
+        href={`${INSTALL_URL}&utm_campaign=header`}
         className="text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
       >
         Uygulamayı indir
-      </Link>
+      </a>
     </header>
   );
 }

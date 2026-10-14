@@ -3,6 +3,9 @@
 
 const SHARE_API = "https://europe-west1-soru-cek.cloudfunctions.net/getShare";
 
+/** Karga Kodu sayfalarındaki tüm indirme butonları; campaign her butonda ayrıca eklenir. */
+export const INSTALL_URL = "https://yanlisdefteri.com/install?utm_source=karga_kodu&utm_medium=web";
+
 // Uygulamadaki alfabe ile aynı: 0/O, 1/I/L yok.
 const CODE_RE = /^[ABCDEFGHJKMNPQRSTUVWXYZ23456789]{6}$/;
 

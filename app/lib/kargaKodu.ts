@@ -1,7 +1,9 @@
 // Karga Kodu: uygulamadan paylaşılan soruları Cloud Function üzerinden okur.
 // Firestore'a doğrudan erişim yok; süre/iptal kontrolü fonksiyonda yapılır.
 
-const SHARE_API = "https://europe-west1-soru-cek.cloudfunctions.net/getShare";
+/** Hem getShare hem getShareImage bu origin'de; tarayıcı bağlantıyı önceden açar. */
+export const SHARE_ORIGIN = "https://europe-west1-soru-cek.cloudfunctions.net";
+const SHARE_API = `${SHARE_ORIGIN}/getShare`;
 
 /** Karga Kodu sayfalarındaki tüm indirme butonları; campaign her butonda ayrıca eklenir. */
 export const INSTALL_URL = "https://yanlisdefteri.com/install?utm_source=karga_kodu&utm_medium=web";
@@ -49,10 +51,21 @@ export function isBot(userAgent: string | null): boolean {
   return !userAgent || BOT_RE.test(userAgent);
 }
 
-export async function fetchShare(code: string, track: boolean): Promise<ShareResult> {
+/**
+ * Fonksiyonun IP sınırı Netlify'ın değil ziyaretçinin IP'sine uygulansın diye IP,
+ * paylaşılan anahtarla birlikte iletilir. Anahtar yoksa (lokal geliştirme) gönderilmez.
+ */
+function proxyHeaders(clientIp: string | null | undefined): HeadersInit | undefined {
+  const key = process.env.SHARE_PROXY_KEY;
+  if (!key || !clientIp) return undefined;
+  return { "x-karga-proxy-key": key, "x-karga-client-ip": clientIp };
+}
+
+export async function fetchShare(code: string, track: boolean, clientIp?: string | null): Promise<ShareResult> {
   try {
     const res = await fetch(`${SHARE_API}?code=${code}${track ? "" : "&track=0"}`, {
       cache: "no-store",
+      headers: proxyHeaders(clientIp),
     });
     if (res.ok) return { ok: true, share: (await res.json()) as Share };
     if (res.status === 404) {

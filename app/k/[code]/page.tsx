@@ -48,8 +48,13 @@ export default async function SharedQuestionsPage({ params }: { params: Promise<
   // "/k/k7f-32q" gibi yazımları tek adrese topla.
   if (raw !== code) redirect(`/k/${code}`);
 
-  const userAgent = (await headers()).get("user-agent");
-  const result = await fetchShare(code, !isBot(userAgent));
+  const requestHeaders = await headers();
+  // Netlify gerçek ziyaretçi IP'sini x-nf-client-connection-ip'de verir.
+  const clientIp =
+    requestHeaders.get("x-nf-client-connection-ip") ??
+    requestHeaders.get("x-forwarded-for")?.split(",")[0].trim() ??
+    null;
+  const result = await fetchShare(code, !isBot(requestHeaders.get("user-agent")), clientIp);
 
   if (!result.ok) {
     const copy = ERROR_COPY[result.error];
@@ -141,6 +146,7 @@ function QuestionCard({ index, question }: { index: number; question: SharedQues
         <ZoomableImage
           src={question.imageUrl}
           alt={`${index + 1}. soru`}
+          priority={index === 0}
           loading={index < 2 ? "eager" : "lazy"}
           className="mx-auto w-auto max-w-full h-auto max-h-[80vh] object-contain rounded-2xl border border-border/60 bg-background"
         />

@@ -1,17 +1,26 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Props = {
   src: string;
   alt: string;
+  /** İlk ekrandaki görsel: hemen ve yüksek öncelikle indirilir. */
+  priority?: boolean;
   loading?: "eager" | "lazy";
   className?: string;
 };
 
 /** Görsele tıklanınca site içinde tam ekran büyütür; ESC, arka plan veya ✕ ile kapanır. */
-export default function ZoomableImage({ src, alt, loading = "lazy", className }: Props) {
+export default function ZoomableImage({ src, alt, priority = false, loading = "lazy", className }: Props) {
   const [open, setOpen] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  // Görsel hydration'dan önce yüklendiyse onLoad kaçmış olur.
+  useEffect(() => {
+    if (imgRef.current?.complete) setLoaded(true);
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -32,12 +41,24 @@ export default function ZoomableImage({ src, alt, loading = "lazy", className }:
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="block w-full cursor-zoom-in"
+        // Yüklenene kadar yer tutar: boyutsuz görseller 0px yükseklikte kalınca tarayıcı
+        // tüm lazy görselleri "ekranda" sanıp aynı anda indiriyor, ilk ekrandakiler yavaşlıyordu.
+        className={`block w-full cursor-zoom-in ${loaded ? "" : "min-h-[40vh] rounded-2xl bg-border/40 animate-pulse"}`}
         aria-label={`${alt} büyüt`}
       >
         {/* Görseller Cloud Function proxy'sinden gelir; next/image optimizasyonu kullanılmaz. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={src} alt={alt} loading={loading} className={className} />
+        <img
+          ref={imgRef}
+          src={src}
+          alt={alt}
+          loading={priority ? "eager" : loading}
+          fetchPriority={priority ? "high" : undefined}
+          decoding="async"
+          onLoad={() => setLoaded(true)}
+          onError={() => setLoaded(true)}
+          className={className}
+        />
       </button>
 
       {open ? (

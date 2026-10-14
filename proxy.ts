@@ -29,16 +29,9 @@ export function proxy(request: NextRequest) {
   return NextResponse.next();
 }
 
-// Statik dosyaların, API rotalarının ve Next.js iç rotalarının proxy'yi tetiklememesi için matcher
+// Yönlendirmeler yalnızca kök yolda. Netlify'da proxy Edge Function olarak çalışır ve
+// arkasındaki sayfalar ziyaretçi IP'sini (x-nf-client-connection-ip) doğru göremez;
+// /k sayfası bu IP'yi Karga Kodu IP sınırı için ilettiğinden proxy diğer yollarda çalışmaz.
 export const config = {
-  matcher: [
-    /*
-     * Aşağıdaki yollarla başlayan istekler HARİÇ tüm istekleri eşleştir:
-     * - api (API rotaları)
-     * - _next/static (statik dosyalar)
-     * - _next/image (görsel optimizasyonu dosyaları)
-     * - favicon.ico, favicon.png, karga.png vb. uzantılı statik dosyalar
-     */
-    "/((?!api|_next/static|_next/image|favicon\\.ico|favicon\\.png|.*\\.(?:png|jpg|jpeg|gif|webp|svg)).*)",
-  ],
+  matcher: ["/"],
 };

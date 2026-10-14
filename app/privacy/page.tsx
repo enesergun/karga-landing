@@ -46,7 +46,7 @@ export default function PrivacyPolicyPage() {
       <article className="w-full max-w-4xl bg-surface border border-border/80 rounded-3xl p-6 sm:p-10 shadow-sm space-y-8 leading-relaxed">
         <header className="border-b border-border/60 pb-6">
           <div className="inline-block px-3 py-1 bg-primary-light text-primary rounded-full text-xs font-semibold mb-3">
-            Son Güncelleme / Last Updated: 28 Eylül 2026
+            Son Güncelleme / Last Updated: 14 Ekim 2026
           </div>
           <h1 className="text-2xl sm:text-4xl font-extrabold text-text-main tracking-tight">
             Gizlilik Politikası / Privacy Policy
@@ -143,6 +143,36 @@ export default function PrivacyPolicyPage() {
           </h2>
           <p className="text-text-secondary text-sm sm:text-base">
             Kullanıcılarımızın kişisel verilerini kesinlikle satmıyor, kiralamıyor ve ticari amaçlarla üçüncü şahıslara iletmiyoruz. Verileriniz yalnızca hizmetin teknik olarak sunulabilmesi için güvenilir bulut altyapı sağlayıcılarımız (sunucu ve veritabanı barındırma) üzerinde şifrelenmiş olarak işlenir.
+          </p>
+        </section>
+
+        {/* 5.1 Karga Kodu ile Paylaşım — uygulamadaki paylaşım ekranı bu bölüme bağlanır (#karga-kodu) */}
+        <section id="karga-kodu" className="space-y-3 scroll-mt-8 bg-primary-light/40 border border-primary/20 rounded-2xl p-5">
+          <h2 className="text-xl font-bold text-text-main flex items-center gap-2">
+            5.1 Karga Kodu ile Paylaşım / Sharing via Karga Kodu
+          </h2>
+          <p className="text-text-secondary text-sm sm:text-base">
+            Karga Kodu, seçtiğiniz soruları 6 haneli bir kod ve <strong>yanlisdefteri.com/k/KOD</strong> adresi üzerinden öğretmeninize, koçunuza veya arkadaşınıza telefonsuz göstermenizi sağlar. Paylaşım yalnızca siz kodu oluşturduğunuzda ve paylaşım ekranındaki bilgilendirmeyi onayladığınızda (açık rıza) yapılır.
+          </p>
+          <ul className="list-disc pl-5 space-y-1.5 text-text-secondary text-sm sm:text-base">
+            <li>
+              <strong>Paylaşılan veriler:</strong> seçtiğiniz soruların fotoğrafları, ders ve konu bilgisi, yanlış nedeni etiketi; ayrıca yalnızca siz seçerseniz notlarınız ve çözüm fotoğraflarınız. Adınız, e-posta adresiniz, hesap ve cihaz bilgileriniz paylaşılmaz.
+            </li>
+            <li>
+              <strong>Kimler görebilir:</strong> kodu veya bağlantıyı bilen herkes. Bu nedenle kodu yalnızca güvendiğiniz kişilerle paylaşmanızı, sosyal medyada paylaşmamanızı ve fotoğraflarda ad, okul, numara, yüz gibi kişisel bilgi olup olmadığını kontrol etmenizi öneririz. Paylaşım sayfaları arama motorlarına kapalıdır.
+            </li>
+            <li>
+              <strong>Süre ve silme:</strong> kod 7 gün geçerlidir; uygulamadaki <strong>Profil &gt; Karga Kodlarım</strong> ekranından istediğiniz an iptal edebilirsiniz. İptal edilen veya süresi dolan paylaşımlar erişime kapanır ve 7 gün sonra sistemlerimizden kalıcı olarak silinir.
+            </li>
+            <li>
+              <strong>Kayıt tutulan bilgiler:</strong> size gösterilmek üzere kodun kaç kez açıldığı ve en son ne zaman açıldığı saklanır. Kötüye kullanımı önlemek için ziyaretçilerin IP adresleri hız sınırlaması amacıyla işlenir; bu bilgi tarafımızca saklanmaz, ancak bulut altyapı sağlayıcımızın teknik erişim kayıtlarında sınırlı bir süre tutulabilir.
+            </li>
+            <li>
+              <strong>Reşit olmayan kullanıcılar:</strong> 18 yaşından küçükseniz paylaşım yapmadan önce velinizle konuşmanızı öneririz.
+            </li>
+          </ul>
+          <p className="text-text-secondary text-sm sm:text-base">
+            6698 sayılı KVKK&apos;nın 11. maddesi kapsamındaki haklarınızı (bilgi talep etme, düzeltme, silme vb.) aşağıdaki iletişim adresi üzerinden kullanabilirsiniz.
           </p>
         </section>
 

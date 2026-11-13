@@ -5,7 +5,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Gizlilik Politikası (Privacy Policy) | Karga App",
   description:
-    "Karga uygulamasının gizlilik politikası, veri toplama ve Google API verileri kullanım koşulları.",
+    "Karga uygulamasının gizlilik politikası: toplanan veriler, yapay zekâ ile soru çözümü, üçüncü taraf hizmetler ve Google API verileri kullanım koşulları.",
   alternates: {
     canonical: "https://kargasoru.netlify.app/privacy",
   },
@@ -46,7 +46,7 @@ export default function PrivacyPolicyPage() {
       <article className="w-full max-w-4xl bg-surface border border-border/80 rounded-3xl p-6 sm:p-10 shadow-sm space-y-8 leading-relaxed">
         <header className="border-b border-border/60 pb-6">
           <div className="inline-block px-3 py-1 bg-primary-light text-primary rounded-full text-xs font-semibold mb-3">
-            Son Güncelleme / Last Updated: 14 Ekim 2026
+            Son Güncelleme / Last Updated: 13 Kasım 2026
           </div>
           <h1 className="text-2xl sm:text-4xl font-extrabold text-text-main tracking-tight">
             Gizlilik Politikası / Privacy Policy
@@ -89,6 +89,12 @@ export default function PrivacyPolicyPage() {
               <strong>Kullanıcı İçeriği (User Content):</strong> Soru kütüphanenize yüklediğiniz soru fotoğrafları, eklediğiniz soru notları, ders/konu etiketleri ve tekrar planı tercihleri.
             </li>
             <li>
+              <strong>Yapay Zekâ ile Çözüm Talepleri (AI Solve Requests):</strong> Karga Kanat&apos;ın yapay zekâ ile çözüm özelliğini kullandığınızda çözülmesini istediğiniz soru fotoğrafı, bu fotoğraf için üretilen çözüm metni ve kullanım sayısı (ör. aylık çözüm hakkınızın ne kadarını kullandığınız). Ayrıntılar 5.2. bölümdedir.
+            </li>
+            <li>
+              <strong>Abonelik Bilgileri (Subscription Data):</strong> Karga Kanat aboneliği satın alırsanız aboneliğinizin türü, başlangıç ve bitiş tarihi ile aktif olup olmadığı. Ödeme ve kart bilgileriniz Apple App Store veya Google Play tarafından işlenir; bu bilgiler bize ulaşmaz.
+            </li>
+            <li>
               <strong>Cihaz ve Kullanım Verileri:</strong> Uygulamanın kararlı çalışabilmesi için işletim sistemi sürümü, cihaz modeli ve anonim hata analiz raporları.
             </li>
           </ul>
@@ -106,6 +112,9 @@ export default function PrivacyPolicyPage() {
             <li>Kullanıcı hesabını oluşturmak, doğrulamak ve güvenli oturum yönetimini sağlamak.</li>
             <li>Soru fotoğraflarını ve çalışma verilerini bulut sunucularında saklayarak kullanıcının tüm cihazlarında (iOS, Android) anında senkronize etmek.</li>
             <li>Akıllı tekrar algoritması üzerinden kullanıcının seçtiği aralıklarla hatırlatıcı bildirimler göndermek.</li>
+            <li>Siz istediğinizde, gönderdiğiniz soru fotoğrafı için yapay zekâ ile adım adım çözüm üretmek.</li>
+            <li>Yapay zekâ çözümlerinin doğruluğunu ve kalitesini ölçmek, hatalı çözümleri tespit edip özelliği iyileştirmek (5.2. bölüm).</li>
+            <li>Abonelik durumunuzu doğrulamak ve ücretsiz/ücretli kullanım haklarınızı uygulamak.</li>
             <li>Kullanıcı desteği sağlamak ve teknik problemleri gidermek.</li>
           </ul>
         </section>
@@ -142,7 +151,30 @@ export default function PrivacyPolicyPage() {
             5. Verilerin Paylaşımı ve Üçüncü Taraflar / Data Sharing
           </h2>
           <p className="text-text-secondary text-sm sm:text-base">
-            Kullanıcılarımızın kişisel verilerini kesinlikle satmıyor, kiralamıyor ve ticari amaçlarla üçüncü şahıslara iletmiyoruz. Verileriniz yalnızca hizmetin teknik olarak sunulabilmesi için güvenilir bulut altyapı sağlayıcılarımız (sunucu ve veritabanı barındırma) üzerinde şifrelenmiş olarak işlenir.
+            Kullanıcılarımızın kişisel verilerini kesinlikle satmıyor, kiralamıyor ve reklam amacıyla üçüncü şahıslara iletmiyoruz. Hizmeti sunabilmek için verileriniz, yalnızca bizim adımıza ve talimatlarımızla işlem yapan aşağıdaki hizmet sağlayıcılarla, her biri için gerekli olan ölçüde paylaşılır:
+          </p>
+          <ul className="list-disc pl-5 space-y-2 text-text-secondary text-sm sm:text-base">
+            <li>
+              <strong>Google Firebase (Google LLC):</strong> hesap doğrulama, veritabanı, soru fotoğraflarının depolanması, sunucu tarafı işlemler ve anonim kullanım analizi.
+            </li>
+            <li>
+              <strong>Anthropic PBC (ABD):</strong> yalnızca yapay zekâ ile çözüm istediğiniz soru fotoğraflarının işlenmesi ve çözüm üretilmesi (5.2. bölüm).
+            </li>
+            <li>
+              <strong>RevenueCat Inc. (ABD):</strong> Karga Kanat abonelik durumunun doğrulanması. Ad veya e-posta adresiniz yerine anonim bir kullanıcı kimliği kullanılır.
+            </li>
+            <li>
+              <strong>Bildirim altyapısı:</strong> hatırlatıcı bildirimleri planlayan kendi sunucumuz; bildirimlerin cihazınıza iletilmesi için Expo, Apple Push Notification Service ve Firebase Cloud Messaging. Bu hizmetlere yalnızca cihazınızın bildirim anahtarı ve bildirim içeriği iletilir.
+            </li>
+            <li>
+              <strong>Cloudflare Inc.:</strong> uygulama güncellemelerinin cihazınıza dağıtılması.
+            </li>
+            <li>
+              <strong>Netlify Inc.:</strong> web sitemizin ve Karga Kodu paylaşım sayfalarının barındırılması.
+            </li>
+          </ul>
+          <p className="text-text-secondary text-sm sm:text-base">
+            Bu sağlayıcıların bir kısmının sunucuları Türkiye dışında (ağırlıklı olarak ABD ve Avrupa Birliği) bulunduğundan, verileriniz 6698 sayılı KVKK&apos;nın 9. maddesine uygun olarak yurt dışına aktarılabilir. Yasal bir yükümlülük veya yetkili bir makamın talebi dışında verileriniz başka hiçbir kişi veya kurumla paylaşılmaz.
           </p>
         </section>
 
@@ -176,13 +208,49 @@ export default function PrivacyPolicyPage() {
           </p>
         </section>
 
+        {/* 5.2 Yapay zekâ ile çözüm — uygulamadaki AI onay ekranı bu bölüme bağlanacak (#yapay-zeka) */}
+        <section id="yapay-zeka" className="space-y-3 scroll-mt-8 bg-primary-light/40 border border-primary/20 rounded-2xl p-5">
+          <h2 className="text-xl font-bold text-text-main flex items-center gap-2">
+            5.2 Yapay Zekâ ile Soru Çözümü / AI-Powered Solutions
+          </h2>
+          <p className="text-text-secondary text-sm sm:text-base">
+            Karga Kanat, yanlış yaptığınız bir sorunun fotoğrafı için yapay zekâ ile adım adım çözüm üretir. Bu özellik için üçüncü taraf bir yapay zekâ hizmeti olan <strong>Anthropic PBC</strong>&apos;nin (ABD) Claude modellerini kullanıyoruz.
+          </p>
+          <ul className="list-disc pl-5 space-y-1.5 text-text-secondary text-sm sm:text-base">
+            <li>
+              <strong>Ne zaman gönderilir:</strong>{" "}yalnızca siz bir soru için &quot;Çöz&quot; seçeneğine dokunduğunuzda. Kütüphanenizdeki diğer sorular, notlarınız ve çözüm fotoğraflarınız gönderilmez.
+            </li>
+            <li>
+              <strong>Ne gönderilir:</strong> çözülmesini istediğiniz soru fotoğrafı ve çözümü düzenlemek için gereken talimatlar. Adınız, e-posta adresiniz, hesap ve cihaz bilgileriniz gönderilmez. Fotoğrafta adınız, okul bilginiz, yüzünüz gibi kişisel bilgiler varsa göndermeden önce kırpmanızı öneririz.
+            </li>
+            <li>
+              <strong>Anthropic verinizi nasıl kullanır:</strong> Anthropic, ticari kullanım koşulları gereği bu hizmet üzerinden gönderilen verileri yapay zekâ modellerini eğitmek için kullanmaz. Veriler, kötüye kullanımı önlemeye yönelik güvenlik denetimleri için sınırlı bir süre (en fazla 30 gün) saklanıp silinir.
+            </li>
+            <li>
+              <strong>Bizde ne saklanır:</strong> üretilen çözüm, sorunuzla birlikte hesabınızda saklanır; böylece çözümü tekrar açtığınızda yeniden işlem yapılmaz. Soruyu veya hesabınızı sildiğinizde çözüm de silinir.
+            </li>
+            <li>
+              <strong>Kalite ölçümü:</strong> yapay zekâ çözümlerinin doğruluğunu ölçmek için, çözüm istenen soru fotoğraflarından bir kısmı ve üretilen çözümler ekibimiz tarafından incelenebilir ve aynı hizmet sağlayıcıyla yeniden çözdürülerek karşılaştırılabilir. Bu incelemelerde fotoğraflar hesap bilgilerinizle ilişkilendirilmez ve başka bir amaçla kullanılmaz. Sorularınızın bu kapsamda kullanılmasını istemiyorsanız aşağıdaki iletişim adresine yazmanız yeterlidir.
+            </li>
+            <li>
+              <strong>Doğruluk:</strong> yapay zekâ çözümleri hatalı olabilir. Çözümü kendi kaynaklarınızla ve öğretmeninizle karşılaştırmanızı öneririz. Çözümler bilgilendirme amaçlıdır.
+            </li>
+            <li>
+              <strong>Yurt dışına aktarım:</strong>{" "}Anthropic&apos;in sunucuları ABD&apos;de bulunduğundan, çözüm için gönderdiğiniz fotoğraf yurt dışına aktarılır. Bu özelliği ilk kez kullanmadan önce uygulama içinde bilgilendirilir ve onayınız alınır. Onay vermezseniz yapay zekâ ile çözüm özelliği dışındaki tüm özellikleri kullanmaya devam edebilirsiniz.
+            </li>
+            <li>
+              <strong>Reşit olmayan kullanıcılar:</strong> 18 yaşından küçükseniz bu özelliği velinizin bilgisi dahilinde kullanmanızı öneririz.
+            </li>
+          </ul>
+        </section>
+
         {/* 6. Veri Güvenliği ve Saklama */}
         <section className="space-y-3">
           <h2 className="text-xl font-bold text-text-main flex items-center gap-2">
             6. Veri Güvenliği ve Saklama / Data Security & Retention
           </h2>
           <p className="text-text-secondary text-sm sm:text-base">
-            Verileriniz endüstri standardı güvenlik protokolleri (SSL/TLS şifreleme) ve güvenli sunucularda korunmaktadır. Verileriniz hesabınız aktif olduğu sürece ve hizmetin devamlılığı için gerekli süre boyunca saklanır.
+            Verileriniz endüstri standardı güvenlik protokolleri (SSL/TLS şifreleme) ve güvenli sunucularda korunmaktadır. Verileriniz hesabınız aktif olduğu sürece ve hizmetin devamlılığı için gerekli süre boyunca saklanır. Yapay zekâ çözümleri ilgili soruyla birlikte saklanır ve soru silindiğinde silinir; üçüncü taraf hizmet sağlayıcıların saklama süreleri 5. ve 5.2. bölümlerde açıklanmıştır.
           </p>
         </section>
 
@@ -192,7 +260,7 @@ export default function PrivacyPolicyPage() {
             7. Hesap ve Veri Silme Talepleri / Account & Data Deletion
           </h2>
           <p className="text-text-secondary text-sm sm:text-base">
-            Kullanıcılarımız diledikleri zaman hesaplarının ve uygulamada saklanan tüm verilerinin (soru fotoğrafları, notlar, Google profil eşleşmeleri) kalıcı olarak silinmesini talep etme hakkına sahiptir.
+            Kullanıcılarımız diledikleri zaman hesaplarının ve uygulamada saklanan tüm verilerinin (soru fotoğrafları, notlar, yapay zekâ çözümleri, Google profil eşleşmeleri) kalıcı olarak silinmesini talep etme hakkına sahiptir.
           </p>
           <div className="space-y-2 text-text-secondary text-sm sm:text-base">
             <p><strong>Verilerinizi silmek için:</strong></p>
